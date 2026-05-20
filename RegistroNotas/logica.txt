@@ -1,0 +1,81 @@
+PSEUDOCODIGO PARA REGISTRO DE NOTAS
+
+// LA CLASE CREA VARIOS ESTUDIANTES, TODOS CON LOS MISMOS 
+// ATRIBUTOS PERO CON VALORES DIFERENTES
+
+CLASE Estudiante
+
+    ATRIBUTOS:
+        nombre       : Cadena
+        idEstudiante : Cadena
+        notas[5]     : Real
+
+    METODOS:
+
+        // Constructor
+        Estudiante(nombre, idEstudiante, notas[])
+            this.nombre       ← nombre
+            this.idEstudiante ← idEstudiante
+            this.notas        ← notas
+        FinConstructor
+
+FIN CLASE
+
+
+PROGRAMA PRINCIPAL
+
+INICIO
+    Definir estudiantes[100] Como Estudiante
+    Definir total Como Entero
+    total ← 0
+
+    Definir opcion Como Entero
+
+    REPETIR
+        Escribir           MENU 
+        Escribir "1. Registrar estudiante"
+        Escribir "2. Calcular promedio"
+        Escribir "3. Buscar estudiante"
+        Escribir "4. Listar estudiantes"
+        Escribir "5. Salir"
+        Escribir "Seleccione una opcion:"
+        Leer opcion
+
+        SEGUN opcion HACER
+
+            CASO 1: // Registrar estudiante
+                Definir nom        Como Cadena
+                Definir id         Como Cadena
+                Definir notasTemp[5] Como Real
+                Definir i          Como Entero
+
+                Escribir "Ingrese nombre completo:"
+                Leer nom
+
+                Escribir "Ingrese ID del estudiante:"
+                Leer id
+
+                Escribir "Ingrese las 5 notas:"
+                Para i ← 0 hasta 4 hacer
+                    Escribir "Nota ", i+1, ":"
+                    Leer notasTemp[i]
+                FinPara
+
+                estudiantes[total] ← nuevo Estudiante(nom, id, notasTemp)
+                total ← total + 1
+                Escribir "Estudiante registrado correctamente."
+
+            CASO 2: // Calcular promedio
+                // (pendiente)
+
+            CASO 3: // Buscar estudiante
+                // (pendiente)
+
+            CASO 4: // Listar estudiantes
+                // (pendiente)
+
+        FinSegun
+
+    HASTA QUE opcion = 5
+
+FIN
